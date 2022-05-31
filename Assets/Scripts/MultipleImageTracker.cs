@@ -59,7 +59,7 @@ public class MultipleImageTracker : MonoBehaviour
             Destroy(spawnedObjects[trackedImage.referenceImage.name]);
             GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
             //spawnedObjects[trackedImage.referenceImage.name] = video1.SetDirectAudioVolume(0, 0);
-            GameObject.Find(spawnedObjects[trackedImage.referenceImage.name]).GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
+           // GameObject.Find(spawnedObjects[trackedImage.referenceImage.name]).GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
         }
     }
 

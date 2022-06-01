@@ -7,7 +7,6 @@ using UnityEngine.Video;
 public class MultipleImageTracker : MonoBehaviour
 {
     private ARTrackedImageManager trackedImageManager;
-    public VideoPlayer video1 = new VideoPlayer();
 
     [SerializeField]
     private GameObject[] placeablePrefabs;
@@ -43,13 +42,11 @@ public class MultipleImageTracker : MonoBehaviour
         foreach (ARTrackedImage trackedImage in eventArgs.added)
         {
             UpdateSpawnObject(trackedImage);
-            GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 1);
         }
 
         foreach (ARTrackedImage trackedImage in eventArgs.updated)
         {
             UpdateSpawnObject(trackedImage);
-            GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 1);
         }
 
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
@@ -57,9 +54,8 @@ public class MultipleImageTracker : MonoBehaviour
             //spawnedObjects[trackedImage.referenceImage.name].SetActive(false);
             //spawnedObjects.Remove(trackedImage.referenceImage.name);
             Destroy(spawnedObjects[trackedImage.referenceImage.name]);
-            GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
             //spawnedObjects[trackedImage.referenceImage.name] = video1.SetDirectAudioVolume(0, 0);
-           // GameObject.Find(spawnedObjects[trackedImage.referenceImage.name]).GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
+            //GameObject.Find("spawnedObjects[trackedImage.referenceImage.name]").GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
         }
     }
 

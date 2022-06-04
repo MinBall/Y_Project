@@ -33,6 +33,7 @@ public class Play_script : MonoBehaviour
             {
                 m_IsOneClick = false;
                 GetComponent<VideoPlayer>().Pause();
+                GetComponent<VideoPlayer>().SetDirectAudioVolume(0, 0);
             }
             if (i % 2 == 1)
             {
